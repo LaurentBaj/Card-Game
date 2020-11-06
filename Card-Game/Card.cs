@@ -15,29 +15,15 @@ namespace Card_Game
         Random s = new Random();
         Random n = new Random();
 
-        List<string> deck = new List<string>();  
         
-
-        public string createCard()
+        public void createDeck(List<string> list)
         {
-            card = ""; 
-            if(deck.Count == 52)
-            {
-                return card;  
-            }
-            else if (!deck.Contains(card))
+            while (list.Count != 52 || !list.Contains(card))
             {
                 card = cardValue[n.Next(1, 13)] + " of " + suit[s.Next(0, 4)];
-                deck.Add(card);
-            } else
-            {
-                createCard(); 
+                list.Add(card);
             }
-            return card; 
         }
-
-
-
 
     }
 }

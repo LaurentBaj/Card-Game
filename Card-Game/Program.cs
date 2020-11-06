@@ -7,22 +7,45 @@ namespace Card_Game
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("How many players");
-            int numberOfPlayers = Convert.ToInt32(Console.ReadLine());
+            Player[] players = null; 
+            int numberOfPlayers = 0;
 
-            Card c1 = new Card();
-            List<Player> players = new List<Player>();
-
-            AddMemberAndPrint(numberOfPlayers, c1, players);
-        }
-
-        private static void AddMemberAndPrint(int numberOfPlayers, Card c1, List<Player> players)
-        {
-            for (int i = 0; i < numberOfPlayers; i++)
+            Console.WriteLine("Choose the amount of players (2-4)");
+            while (numberOfPlayers > 4 || numberOfPlayers < 2)
             {
-                players.Add(new Player("Player " + (i + 1)));
-                Console.WriteLine(players[i].Name + " picks " + c1.createCard());
+                numberOfPlayers = Convert.ToInt32(Console.ReadLine());
+                if (numberOfPlayers > 4 || numberOfPlayers < 2)
+                {
+                    Console.WriteLine("That is not a valid amount of players. Try again (2-4)");
+                }
             }
+
+
+
+            PlayerFactory a = new PlayerFactory(numberOfPlayers, players);
+
+
+
+
+
+
+
+            Card deck = new Card();
+
+            List<string> cards = new List<string>();
+
+            deck.createDeck(cards);
+
+            foreach (string card in cards)
+            {
+                Console.WriteLine(card.ToString());
+            }
+
+
+
+            Console.ReadLine(); 
         }
+
+       
     }
 }
