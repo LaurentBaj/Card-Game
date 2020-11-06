@@ -13,12 +13,16 @@ namespace Card_Game
             Card c1 = new Card();
             List<Player> players = new List<Player>();
 
+            AddMemberAndPrint(numberOfPlayers, c1, players);
+        }
+
+        private static void AddMemberAndPrint(int numberOfPlayers, Card c1, List<Player> players)
+        {
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                players.Add(new Player("Player " + (i + 1))); 
+                players.Add(new Player("Player " + (i + 1)));
                 Console.WriteLine(players[i].Name + " picks " + c1.createCard());
             }
-   
         }
     }
 }
