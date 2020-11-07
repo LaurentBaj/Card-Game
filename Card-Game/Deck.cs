@@ -8,29 +8,41 @@ namespace Card_Game
 {
     class Deck
     {
-        private Card[] deck;
+        private string[] deck = new string[52]; // Empty deck-slots 
 
+        // Suits and Values
         private string[] suit = new string[] {"Spades", "Hearts", "Diamonds", "Clubs"};  
         private string[] value = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jester", "Queen", "King"};
-
-        Random v = new Random(); 
-        Random s = new Random();
-
+        
         public Deck()
         {
-            deck = new Card[52];
+            produceDeck(); // Fill deck and print 
+        }
 
-            for (int i = 0; i < deck.Length; i++)
+
+        public void produceDeck() // Non-shuffled
+        {
+            string v, s;
+            int counter = 0; 
+
+           for (int i = 0; i < suit.Length; i++)
             {
-                deck[i] = produceCard();
-                Console.WriteLine(deck[i].ToString());
+                s = suit[i]; 
+
+                for (int j = 0; j < value.Length; j++)
+                {
+                    v = value[j];
+                    deck[counter] = v + " of " + s;
+                    counter++;
+                }
+            }
+
+            foreach (string d in deck)
+            {
+                Console.WriteLine(d.ToString());
             }
         }
 
-        public Card produceCard()
-        {
-            Card c = new Card(value[v.Next(1, 12)], suit[s.Next(1, 4)]);
-            return c; 
-        }
+
     }
 }
