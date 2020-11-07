@@ -10,7 +10,7 @@ namespace Card_Game
     {
         private Card[] deck;
 
-        private string[] suit = new string[] {"Spades", "Hearts", "Diamonds", "Club"};  
+        private string[] suit = new string[] {"Spades", "Hearts", "Diamonds", "Clubs"};  
         private string[] value = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jester", "Queen", "King"};
 
         Random v = new Random(); 

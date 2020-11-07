@@ -19,24 +19,20 @@ namespace Card_Game
                     Console.WriteLine("That is not a valid amount of players. Try again (2-4)");
                 }
             }
+            Console.WriteLine(""); 
 
 
             PlayerFactory a = new PlayerFactory(numberOfPlayers, players);
 
+            Console.WriteLine(""); 
 
-            //Deck d1 = new Deck(); 
+            Deck d1 = new Deck(); 
 
             
-           
-            
-
-
-           
-
+          
 
             Console.ReadLine(); 
         }
-
        
     }
 }
