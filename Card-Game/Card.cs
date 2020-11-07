@@ -5,25 +5,30 @@ using System.Text;
 
 namespace Card_Game
 {
-    class Card
+    public class Card : ICard
     {
-        private string card;
-
-        public string[] suit = new string[] { "Clubs", "Diamonds", "Spade", "Hearts" };
-        public string[] cardValue = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jester", "Queen", "King"}; 
-
-        Random s = new Random();
-        Random n = new Random();
-
+        private string _suit;
+        private string _value;
         
-        public void createDeck(List<string> list)
+        public Card(string value, string suit)
         {
-            while (list.Count != 52 || !list.Contains(card))
-            {
-                card = cardValue[n.Next(1, 13)] + " of " + suit[s.Next(0, 4)];
-                list.Add(card);
-            }
+            _suit = suit;
+            _value = value; 
         }
 
+        public string getSuit()
+        {
+            return _suit;
+        }
+
+        public string getValue()
+        {
+            return _value;
+        }
+
+        public override string ToString()
+        {
+            return _value + " of " + _suit;
+        }
     }
 }

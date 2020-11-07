@@ -12,7 +12,6 @@ namespace Card_Game
         {
             Name = name; 
         }
-
         
     }
 }
