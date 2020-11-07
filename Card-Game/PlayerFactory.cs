@@ -14,6 +14,7 @@ namespace Card_Game
             {
                 array[i] = new Player("Player " + (i + 1));
                 Console.WriteLine(array[i].Name);
+                array[i].showHand(); 
             }
         }
     }
