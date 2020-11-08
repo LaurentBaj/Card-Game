@@ -12,22 +12,24 @@ namespace Card_Game
 
         // Suits and Values
         private string[] suit = new string[] {"Spades", "Hearts", "Diamonds", "Clubs"};  
-        private string[] value = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jester", "Queen", "King"};
-        
-        public Deck()
+        private string[] value = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+
+        Random r = new Random();
+
+        public Deck() // Fill deck, Shuffle and Print
         {
-            produceDeck(); // Fill deck and print 
+            ProduceDeck();
+            ShuffleDeck();
         }
 
-
-        public void produceDeck() // Non-shuffled
+        public void ProduceDeck()
         {
-            string v, s;
-            int counter = 0; 
+           string v, s;
+           int counter = 0; 
 
            for (int i = 0; i < suit.Length; i++)
-            {
-                s = suit[i]; 
+           {
+           s = suit[i]; 
 
                 for (int j = 0; j < value.Length; j++)
                 {
@@ -35,12 +37,46 @@ namespace Card_Game
                     deck[counter] = v + " of " + s;
                     counter++;
                 }
-            }
+           }
+        }
 
-            foreach (string d in deck)
+        public void ShuffleDeck()
+        {
+            int shuffleIndex;
+            string temp = ""; 
+            
+            for (int i = 0; i < 52; i++)
+            {
+                for (int j = 0; j < 52; j++)
+                {
+                    shuffleIndex = r.Next(1, 52);
+
+                    temp = deck[j];
+                    deck[j] = deck[shuffleIndex];
+                    deck[shuffleIndex] = temp;
+                }
+            }
+        }
+
+        public void PrintDeck() // For testing
+        {
+            foreach (string d in deck) // Print
             {
                 Console.WriteLine(d.ToString());
             }
+        }
+
+        public string PullCardFromDeck()
+        {
+            int removeAtIndex = r.Next(1, 52); 
+            string temp = deck[removeAtIndex];
+            if (temp == "No card here")
+            {
+                PullCardFromDeck();
+                return; 
+            }
+            deck[removeAtIndex] = "No card here";
+            return temp; 
         }
 
 
