@@ -8,15 +8,15 @@ namespace Card_Game
 {
     class Deck
     {
-        private string[] deck = new string[52]; // Empty deck-slots 
+        public static string[] deck = new string[52]; // Empty deck-slots 
+        Random r = new Random();
 
         // Suits and Values
         private string[] suit = new string[] {"Spades", "Hearts", "Diamonds", "Clubs"};  
         private string[] value = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 
-        Random r = new Random();
 
-        public Deck() // Fill deck, Shuffle and Print
+        public Deck() // Fill deck and shuffle it
         {
             ProduceDeck();
             ShuffleDeck();
@@ -60,7 +60,7 @@ namespace Card_Game
 
         public void PrintDeck() // For testing
         {
-            foreach (string d in deck) // Print
+            foreach (string d in deck)
             {
                 Console.WriteLine(d.ToString());
             }
@@ -70,14 +70,15 @@ namespace Card_Game
         {
             int removeAtIndex = r.Next(1, 52); 
             string temp = deck[removeAtIndex];
-            if (temp == "No card here")
+            if (temp != "No card here")
             {
-                PullCardFromDeck();
-                return; 
+                deck[removeAtIndex] = "No card here";
+                return temp;
             }
-            deck[removeAtIndex] = "No card here";
-            return temp; 
+            PullCardFromDeck();
+            return "No card here"; 
         }
+
 
 
     }

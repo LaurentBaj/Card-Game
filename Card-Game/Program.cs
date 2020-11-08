@@ -8,9 +8,9 @@ namespace Card_Game
         static void Main(string[] args)
         {
             Deck d1 = new Deck();
-            Player[] players = null;
-            int numberOfPlayers = 0;
+            Console.WriteLine(d1.PullCardFromDeck());
 
+            int numberOfPlayers = 0;
             Console.WriteLine("Choose the amount of players (2-4)");
             while (numberOfPlayers > 4 || numberOfPlayers < 2)
             {
@@ -23,44 +23,46 @@ namespace Card_Game
 
             Console.WriteLine("");
 
-
-            PlayerFactory a = new PlayerFactory(numberOfPlayers, players);
-
-            for (int i = 0; i < a.players.Length; i++)
+            PlayerFactory a = new PlayerFactory(numberOfPlayers);
+            for (int i = 0; i < numberOfPlayers; i++)
             {
                 for(int j = 0; j < 4; j++)
                 {
-                    a.players[i]._hand[j] = d1.PullCardFromDeck(); 
+                    PlayerFactory.players[i]._hand[j] = d1.PullCardFromDeck(); 
                 } 
             }
 
             Console.WriteLine(""); 
 
-            for (int i = 0; i < a.players.Length; i++)
+            for (int i = 0; i < numberOfPlayers; i++)
             {
                 Console.WriteLine("");
-                Console.WriteLine(a.players[i].Name); 
+                Console.WriteLine(PlayerFactory.players[i].Name); 
                 for (int j = 0; j < 4; j++)
                 {
-                    Console.WriteLine(a.players[i]._hand[j]);
+                    Console.WriteLine(PlayerFactory.players[i]._hand[j]);
                 }
             }
 
 
-            //Console.WriteLine("");
+
+
+
+
+
+
+            Console.WriteLine("");
 
             //Deck d1 = new Deck();
 
-            //Console.WriteLine("\n");
+           
 
             //d1.PullCardFromDeck();
 
-            //d1.PrintDeck();
-
 
             //d1.PullCardFromDeck();
 
-            //d1.PrintDeck();
+            d1.PrintDeck();
 
 
 
