@@ -7,6 +7,8 @@ namespace Card_Game
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World\n"); 
+
             Deck d1 = new Deck();
             Console.WriteLine(d1.PullCardFromDeck());
 
@@ -45,26 +47,7 @@ namespace Card_Game
             }
 
 
-
-
-
-
-
-
-            Console.WriteLine("");
-
-            //Deck d1 = new Deck();
-
-           
-
-            //d1.PullCardFromDeck();
-
-
-            //d1.PullCardFromDeck();
-
             d1.PrintDeck();
-
-
 
             Console.ReadLine(); 
         }

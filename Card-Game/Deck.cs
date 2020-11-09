@@ -8,43 +8,42 @@ namespace Card_Game
 {
     class Deck
     {
-        public static string[] deck = new string[52]; // Empty deck-slots 
+        List<string> deck = new List<string>(); // Empty deck-slots 
         Random r = new Random();
+        int removeAtIndex;
 
         // Suits and Values
-        private string[] suit = new string[] {"Spades", "Hearts", "Diamonds", "Clubs"};  
-        private string[] value = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-
+        private string[] suit = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
+        private string[] value = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
 
         public Deck() // Fill deck and shuffle it
         {
             ProduceDeck();
             ShuffleDeck();
+            PrintDeck(); 
         }
 
         public void ProduceDeck()
         {
-           string v, s;
-           int counter = 0; 
+            string v, s;
 
-           for (int i = 0; i < suit.Length; i++)
-           {
-           s = suit[i]; 
+            for (int i = 0; i < suit.Length; i++)
+            {
+                s = suit[i];
 
                 for (int j = 0; j < value.Length; j++)
                 {
                     v = value[j];
-                    deck[counter] = v + " of " + s;
-                    counter++;
+                    deck.Add(v + " of " + s);
                 }
-           }
+            }
         }
 
         public void ShuffleDeck()
         {
             int shuffleIndex;
-            string temp = ""; 
-            
+            string temp = "";
+
             for (int i = 0; i < 52; i++)
             {
                 for (int j = 0; j < 52; j++)
@@ -68,17 +67,11 @@ namespace Card_Game
 
         public string PullCardFromDeck()
         {
-            int removeAtIndex = r.Next(1, 52); 
+            removeAtIndex = r.Next(0, deck.Count - 1);
             string temp = deck[removeAtIndex];
-            if (temp != "No card here")
-            {
-                deck[removeAtIndex] = "No card here";
-                return temp;
-            }
-            PullCardFromDeck();
-            return "No card here"; 
+            deck.Remove(deck[removeAtIndex]);
+            return temp;
         }
-
 
 
     }
