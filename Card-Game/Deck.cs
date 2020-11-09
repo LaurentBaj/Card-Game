@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Card_Game
 {
-    class Deck
+    public class Deck
     {
-        public List<string> deck = new List<string>(); // Empty deck-slots 
-        Random r = new Random();
+        public static List<string> deck = new List<string>(); // Empty deck-slots 
+        static Random r = new Random();
 
         // Suits and Values
         private string[] suit = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
@@ -21,10 +21,9 @@ namespace Card_Game
             ShuffleDeck();
         }
 
-        public void ProduceDeck()
+        public void ProduceDeck() // Produce each card (non-shuffled)
         {
             string v, s;
-
             for (int i = 0; i < suit.Length; i++)
             {
                 s = suit[i];
@@ -41,7 +40,6 @@ namespace Card_Game
         {
             int shuffleIndex;
             string temp = "";
-
             for (int i = 0; i < 52; i++)
             {
                 for (int j = 0; j < 52; j++)
@@ -55,7 +53,7 @@ namespace Card_Game
             }
         }
 
-        public void PrintDeck() // For testing
+        public static void PrintDeck() // For testing
         {
             foreach (string d in deck)
             {
@@ -63,12 +61,13 @@ namespace Card_Game
             }
         }
 
-        public string PullCardFromDeck()
+        public static string PullCardFromDeck() // Pull one card and delete from deck
         {
             int removeAtIndex = r.Next(0, deck.Count - 1);
             string temp = deck[removeAtIndex];
             deck.Remove(deck[removeAtIndex]);
             return temp;
         }
+
     }
 }
