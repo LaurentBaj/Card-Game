@@ -7,10 +7,8 @@ namespace Card_Game
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World\n"); 
-
             Deck d1 = new Deck();
-            Console.WriteLine(d1.PullCardFromDeck());
+            Console.WriteLine(d1.deck.Count);
 
             int numberOfPlayers = 0;
             Console.WriteLine("Choose the amount of players (2-4)");
@@ -42,12 +40,15 @@ namespace Card_Game
                 Console.WriteLine(PlayerFactory.players[i].Name); 
                 for (int j = 0; j < 4; j++)
                 {
-                    Console.WriteLine(PlayerFactory.players[i]._hand[j]);
+                    Console.Write(PlayerFactory.players[i]._hand[j] + ", ");
                 }
             }
 
-
+            Console.WriteLine("\n");
             d1.PrintDeck();
+            Console.WriteLine(d1.deck.Count);
+
+
 
             Console.ReadLine(); 
         }

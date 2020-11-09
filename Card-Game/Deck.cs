@@ -8,9 +8,8 @@ namespace Card_Game
 {
     class Deck
     {
-        List<string> deck = new List<string>(); // Empty deck-slots 
+        public List<string> deck = new List<string>(); // Empty deck-slots 
         Random r = new Random();
-        int removeAtIndex;
 
         // Suits and Values
         private string[] suit = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
@@ -20,7 +19,6 @@ namespace Card_Game
         {
             ProduceDeck();
             ShuffleDeck();
-            PrintDeck(); 
         }
 
         public void ProduceDeck()
@@ -67,12 +65,10 @@ namespace Card_Game
 
         public string PullCardFromDeck()
         {
-            removeAtIndex = r.Next(0, deck.Count - 1);
+            int removeAtIndex = r.Next(0, deck.Count - 1);
             string temp = deck[removeAtIndex];
             deck.Remove(deck[removeAtIndex]);
             return temp;
         }
-
-
     }
 }
