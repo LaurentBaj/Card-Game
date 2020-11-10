@@ -26,14 +26,20 @@ namespace Card_Game
 
         // Random player switches card
         // This method is supposed to have a lock 
+        // A lot of Console.WriteLine()-methods for testing
         public static void PlayerAction() 
         {
             Player randomPlayer = playersOnBoard[a.Next(0, playersOnBoard.Length - 1)];
             Console.WriteLine(randomPlayer.Name); 
             string randomCardFromPlayer = randomPlayer._hand[a.Next(0, 3)];
             string newCard = Deck.PullCardFromDeck();
+            randomPlayer.ShowHand();
+
+            Console.WriteLine("\n"); 
+            
             Deck.deck.Add(randomCardFromPlayer);
             randomPlayer._hand[a.Next(0, 3)] = newCard;
+            Console.WriteLine(randomPlayer.Name + " after Card-Switch");
             randomPlayer.ShowHand(); 
         }
 

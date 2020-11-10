@@ -18,6 +18,13 @@ namespace Card_Game
             
             Board board = new Board(); // Create participants
 
+            // Display card-switching
+            Board.PlayerAction();
+
+
+            Console.WriteLine("\n"); 
+
+
             // Show player hand + display different suits of hand 
             Console.WriteLine(Board.playersOnBoard[0].Name); 
             Board.playersOnBoard[0].ShowHand();
