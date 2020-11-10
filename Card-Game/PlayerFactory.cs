@@ -9,7 +9,6 @@ namespace Card_Game
         public static Player[] players; 
         public PlayerFactory(int amount) // Create players and give hand
         {
-            Console.WriteLine("");
             players = new Player[amount];
 
             for (int i = 0; i < amount; i++)
@@ -50,6 +49,7 @@ namespace Card_Game
 
         public static void PrintEachPlayerAndHand(int amount) // For testing
         {
+            Console.WriteLine("\n");
             for (int i = 0; i < amount; i++)
             {
                 Console.WriteLine("\n" + PlayerFactory.players[i].Name);

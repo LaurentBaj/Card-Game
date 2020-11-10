@@ -9,7 +9,7 @@ namespace Card_Game
     public class Deck
     {
         public static List<string> deck = new List<string>(); // Empty deck-slots 
-        static Random r = new Random();
+        Random r = new Random(); 
 
         // Suits and Values
         private string[] suit = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
@@ -59,13 +59,13 @@ namespace Card_Game
             {
                 Console.WriteLine(d.ToString());
             }
+            Console.WriteLine("\n");
         }
 
-        public static string PullCardFromDeck() // Pull one card and delete from deck
+        public static string PullCardFromDeck() // Pull one card from top
         {
-            int removeAtIndex = r.Next(0, deck.Count - 1);
-            string temp = deck[removeAtIndex];
-            deck.Remove(deck[removeAtIndex]);
+            string temp = deck[0];
+            deck.Remove(deck[0]);
             return temp;
         }
 
