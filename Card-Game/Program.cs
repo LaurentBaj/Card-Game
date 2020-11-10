@@ -9,19 +9,20 @@ namespace Card_Game
         {
             // Create deck + amount at game start
             Deck d1 = new Deck();
-            GameResponses.CountCards();
-            Deck.PrintDeck(); 
-
-            GameResponses.DisplayWelComeMessage(); 
 
             //Create: players (based on input) + provide player hand + print results
+            GameResponses.DisplayWelComeMessage();
             int numberOfPlayers = PlayerFactory.DecideAmountOfPLayers();
-            PlayerFactory a = new PlayerFactory(numberOfPlayers);
+            PlayerFactory players = new PlayerFactory(numberOfPlayers);
 
-            Deck.PrintDeck(); 
+            
+            Board board = new Board(); // Create participants
 
-            //Deck count after first delegation
-            GameResponses.CountCards();
+            // Show player hand + display different suits of hand 
+            Console.WriteLine(Board.playersOnBoard[0].Name); 
+            Board.playersOnBoard[0].ShowHand();
+            Console.WriteLine("\n" + Board.playersOnBoard[0].Name + " - Suit types: ");
+            Board.playersOnBoard[0].PlayerHandSuit();
 
             Console.ReadLine(); 
         }

@@ -27,6 +27,7 @@ namespace Card_Game
             int numberOfPlayers = 0;
             while (numberOfPlayers > 4 || numberOfPlayers < 2)
             {
+                
                 numberOfPlayers = Convert.ToInt32(Console.ReadLine());
                 if (numberOfPlayers > 4 || numberOfPlayers < 2)
                 {

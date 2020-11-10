@@ -13,5 +13,22 @@ namespace Card_Game
         {
             Name = name;
         }
+
+        public void ShowHand()
+        {
+            foreach (string p in _hand)
+            {
+                Console.WriteLine(p); 
+            }
+        }
+
+        public void PlayerHandSuit()
+        { 
+            foreach (string p in _hand)
+            {
+                string[] a = p.Split(" ");
+                Console.WriteLine(a[2]);
+            }
+        }
     }
 }
