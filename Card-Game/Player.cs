@@ -24,16 +24,6 @@ namespace Card_Game
             }
         }
 
-        public void PlayerHandSuit()
-        {
-            int counter = 0;
-            for (int i = 0; i < _hand.Length; i++)
-            {
-                string[] splittedCard = _hand[i].Split(" ");
-                _handSuits[i] = splittedCard[2];
-            }  
-        }
-
         public void isWinnerHand()
         {
             PlayerHandSuit(); 
@@ -44,8 +34,19 @@ namespace Card_Game
                 _handSuits[0] == "Clubs" && _handSuits[1] == "Clubs" && _handSuits[2] == "Clubs" && _handSuits[3] == "Clubs"
                ) 
             { 
-                Console.WriteLine(Name + " is the winner"); 
+                Console.WriteLine(Name + " is the winner");
+                ShowHand(); 
             } 
+        }
+
+        public void PlayerHandSuit() // Fill suit-info of each card
+        {
+            int counter = 0;
+            for (int i = 0; i < _hand.Length; i++)
+            {
+                string[] splittedCard = _hand[i].Split(" ");
+                _handSuits[i] = splittedCard[2];
+            }
         }
     }
 }

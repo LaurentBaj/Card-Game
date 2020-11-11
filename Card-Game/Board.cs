@@ -34,17 +34,11 @@ namespace Card_Game
      
             string randomCardFromPlayer = randomPlayer._hand[a.Next(0, 3)]; // pick random card from same random player
             string newCard = Deck.PullCardFromDeck();
-
-            Console.WriteLine("\n"); 
             
             Deck.deck.Add(randomCardFromPlayer);
             randomPlayer._hand[a.Next(0, 3)] = newCard;
-            Console.WriteLine(randomPlayer.Name + " after Card-Switch");
-
-            randomPlayer.ShowHand();
 
             randomPlayer.isWinnerHand();  // Check if player has won
-            Console.WriteLine("\n");
         }
 
     }

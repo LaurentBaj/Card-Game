@@ -19,7 +19,8 @@ namespace Card_Game
             Board board = new Board(); // Create participants
 
            
-
+            // Confirm player victory 
+            // Spotted some wierd anomalities 
             for (int i = 0; i < 1000; i++)
             {
                 Board.PlayerAction(); 
