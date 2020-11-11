@@ -18,22 +18,16 @@ namespace Card_Game
             
             Board board = new Board(); // Create participants
 
-            // Display card-switching
-            Board.PlayerAction();
+           
+
+            for (int i = 0; i < 1000; i++)
+            {
+                Board.PlayerAction(); 
+            }
+
 
 
             Console.WriteLine("\n");
-
-
-            Random random = new Random();
-            int randomNum = random.Next(0, numberOfPlayers - 1); 
-            Console.WriteLine(Board.playersOnBoard[randomNum].Name);
-
-            Board.playersOnBoard[randomNum].PlayerHandSuit();
-
-            PlayerFactory.PrintEachPlayerAndHand(numberOfPlayers); 
-
-            Console.ReadLine(); 
         }
     }
 }
