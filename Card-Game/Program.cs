@@ -22,14 +22,16 @@ namespace Card_Game
             Board.PlayerAction();
 
 
-            Console.WriteLine("\n"); 
+            Console.WriteLine("\n");
 
 
-            // Show player hand + display different suits of hand 
-            Console.WriteLine(Board.playersOnBoard[0].Name); 
-            Board.playersOnBoard[0].ShowHand();
-            Console.WriteLine("\n" + Board.playersOnBoard[0].Name + " - Suit types: ");
-            Board.playersOnBoard[0].PlayerHandSuit();
+            Random random = new Random();
+            int randomNum = random.Next(0, numberOfPlayers - 1); 
+            Console.WriteLine(Board.playersOnBoard[randomNum].Name);
+
+            Board.playersOnBoard[randomNum].PlayerHandSuit();
+
+            PlayerFactory.PrintEachPlayerAndHand(numberOfPlayers); 
 
             Console.ReadLine(); 
         }

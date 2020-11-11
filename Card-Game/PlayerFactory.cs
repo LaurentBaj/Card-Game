@@ -10,19 +10,16 @@ namespace Card_Game
         public PlayerFactory(int amount) // Create players and give hand
         {
             players = new Player[amount];
-
             for (int i = 0; i < amount; i++)
             {
                 players[i] = new Player("Player " + (i + 1)); 
             }
-
             ProduceEachPlayerHand(amount);
-            PrintEachPlayerAndHand(amount);
-
+            PrintEachPlayerAndHand(amount); 
             Console.WriteLine("");
         }
 
-        public static int DecideAmountOfPLayers()
+        public static int DecideAmountOfPLayers() // Save user input
         {
             int numberOfPlayers = 0;
             while (numberOfPlayers > 4 || numberOfPlayers < 2)
