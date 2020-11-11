@@ -44,7 +44,7 @@ namespace Card_Game
             {
                 for (int j = 0; j < 52; j++)
                 {
-                    shuffleIndex = r.Next(1, 52);
+                    shuffleIndex = r.Next(0, 52);
 
                     temp = deck[j];
                     deck[j] = deck[shuffleIndex];

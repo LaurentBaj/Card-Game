@@ -21,12 +21,12 @@ namespace Card_Game
            
             // Confirm player victory 
             // Spotted some wierd anomalities 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 170; i++)
             {
                 Board.PlayerAction(); 
-            }
+            } 
 
-
+            PlayerFactory.PrintEachPlayerAndHand(numberOfPlayers); 
 
             Console.WriteLine("\n");
         }
