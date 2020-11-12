@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Card_Game
 {
@@ -29,16 +30,20 @@ namespace Card_Game
         public static void PlayerAction() // Condition at the end does not work yet 
         {
             Random a = new Random();
+            Random card = new Random();
+            int randomCard = card.Next(0, 4); 
 
             Player randomPlayer = playersOnBoard[a.Next(0, playersOnBoard.Length)]; // pick random player
      
-            string randomCardFromPlayer = randomPlayer._hand[a.Next(0, 4)]; // pick random card from same random player
+            string randomCardFromPlayer = randomPlayer._hand[randomCard]; // pick random card from same random player
             string newCard = Deck.PullCardFromDeck();
             
             Deck.deck.Add(randomCardFromPlayer);
-            randomPlayer._hand[a.Next(0, 4)] = newCard;
+            randomPlayer._hand[randomCard] = newCard;
 
             randomPlayer.isWinnerHand();  // Check if player has won
+
+            Thread.Sleep(1);
         }
 
     }
