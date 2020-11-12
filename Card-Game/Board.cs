@@ -41,9 +41,11 @@ namespace Card_Game
             Deck.deck.Add(randomCardFromPlayer);
             randomPlayer._hand[randomCard] = newCard;
 
+            Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] with - " + "[" + newCard + "]"); 
+
             randomPlayer.isWinnerHand();  // Check if player has won
 
-            Thread.Sleep(1);
+            Thread.Sleep(1500);
         }
 
     }

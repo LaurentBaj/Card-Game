@@ -21,7 +21,7 @@ namespace Card_Game
            
             // Confirm player victory 
             // Spotted some wierd anomalities 
-            for (int i = 0; i < 1700; i++)
+            for (int i = 0; i < 700; i++)
             {
                 Board.PlayerAction(); 
             } 
