@@ -24,7 +24,7 @@ namespace Card_Game
             }
         }
 
-        public void isWinnerHand()
+        public void isWinnerHand() // Check if Player has a winning hand
         {
             PlayerHandSuit(); 
             if (

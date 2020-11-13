@@ -26,7 +26,6 @@ namespace Card_Game
 
         // Random player switches card
         // This method is supposed to have a lock 
-        // A lot of Console.WriteLine()-methods for testing
         public static void PlayerAction() // Condition at the end does not work yet 
         {
             Random a = new Random();
@@ -41,11 +40,11 @@ namespace Card_Game
             Deck.deck.Add(randomCardFromPlayer);
             randomPlayer._hand[randomCard] = newCard;
 
-            Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] with - " + "[" + newCard + "]"); 
+            Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]"); 
 
             randomPlayer.isWinnerHand();  // Check if player has won
 
-            Thread.Sleep(1500);
+            Thread.Sleep(1200);
         }
 
     }

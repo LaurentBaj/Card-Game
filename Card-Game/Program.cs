@@ -19,14 +19,11 @@ namespace Card_Game
             Board board = new Board(); // Create participants
 
            
-            // Confirm player victory 
-            // Spotted some wierd anomalities 
-            for (int i = 0; i < 700; i++)
+            // Initialize game - This is supposed to be threads (will implement it later)
+            for (int i = 0; i < 200; i++)
             {
                 Board.PlayerAction(); 
-            } 
-
-            PlayerFactory.PrintEachPlayerAndHand(numberOfPlayers); 
+            }
 
             Console.WriteLine("\n");
         }
