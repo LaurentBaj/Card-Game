@@ -16,15 +16,15 @@ namespace Card_Game
             int numberOfPlayers = PlayerFactory.DecideAmountOfPLayers();
             PlayerFactory players = new PlayerFactory(numberOfPlayers);
 
-            Board board = new Board(); // Create participants
+            Board board = new Board(); // Join players 
 
             // Starts the game
             GameInitializer(numberOfPlayers);
-
         }
 
         private static void GameInitializer(int numberOfPlayers)
         {
+
             List<Thread> threads = new List<Thread>();
             for (int i = 0; i < 200; i++)
             {
@@ -35,18 +35,25 @@ namespace Card_Game
             for (int i = 0; i < 200; i++)
             {
                 threads[i].Start();
-
-                Thread.Sleep(100);
+                Thread.Sleep(250);
 
                 for (int j = 0; j < numberOfPlayers; j++)
                 {
-                    if (Board.playersOnBoard[j].hasWinnerHand == true) End();
+                    if (Board.playersOnBoard[j].hasWinnerHand == true)
+                    {
+                        GameResponses.DisplayEachHandUponGameOver(); 
+                        PlayerFactory.PrintEachPlayerAndHand(numberOfPlayers);
+                        End();
+                    }
                 }
+
             }
+
         }
 
         static void End()
         {
+            Console.WriteLine("\n\n..Hit the x on the right corner to quit"); 
             Console.ReadKey(true);
         }
     }

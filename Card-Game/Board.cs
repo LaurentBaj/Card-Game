@@ -29,22 +29,19 @@ namespace Card_Game
         {
             Random a = new Random();
             Random card = new Random();
-            int randomCard = card.Next(0, 4); 
+            int cardToBeReplacedIndex = card.Next(0, 4); 
 
             // Pick random player + swap card from hand and deck
             Player randomPlayer = playersOnBoard[a.Next(0, playersOnBoard.Length)]; 
-            string randomCardFromPlayer = randomPlayer._hand[randomCard]; 
+            string randomCardFromPlayer = randomPlayer._hand[cardToBeReplacedIndex]; 
             string newCard = Deck.PullCardFromDeck();
             Deck.deck.Add(randomCardFromPlayer);
-            randomPlayer._hand[randomCard] = newCard;
+            randomPlayer._hand[cardToBeReplacedIndex] = newCard;
 
             // Display process above, check player victory + sleep 1.2s 
             Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]");
             randomPlayer.isWinnerHand();  // Check if player has won 
-
-            //if (randomPlayer.hasWinnerHand) Thread.Sleep(3000); 
         }
-
 
     }
 }
