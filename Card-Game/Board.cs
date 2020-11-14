@@ -25,27 +25,26 @@ namespace Card_Game
 
 
         // Random player switches card
-        // This method is supposed to have a lock 
         public static void PlayerAction() // Condition at the end does not work yet 
         {
             Random a = new Random();
             Random card = new Random();
             int randomCard = card.Next(0, 4); 
 
-            Player randomPlayer = playersOnBoard[a.Next(0, playersOnBoard.Length)]; // pick random player
-     
-            string randomCardFromPlayer = randomPlayer._hand[randomCard]; // pick random card from same random player
+            // Pick random player + swap card from hand and deck
+            Player randomPlayer = playersOnBoard[a.Next(0, playersOnBoard.Length)]; 
+            string randomCardFromPlayer = randomPlayer._hand[randomCard]; 
             string newCard = Deck.PullCardFromDeck();
-            
             Deck.deck.Add(randomCardFromPlayer);
             randomPlayer._hand[randomCard] = newCard;
 
-            Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]"); 
+            // Display process above, check player victory + sleep 1.2s 
+            Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]");
+            randomPlayer.isWinnerHand();  // Check if player has won 
 
-            randomPlayer.isWinnerHand();  // Check if player has won
-
-            Thread.Sleep(1200);
+            //if (randomPlayer.hasWinnerHand) Thread.Sleep(3000); 
         }
+
 
     }
 }

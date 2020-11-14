@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Card_Game
 {
@@ -15,17 +16,38 @@ namespace Card_Game
             int numberOfPlayers = PlayerFactory.DecideAmountOfPLayers();
             PlayerFactory players = new PlayerFactory(numberOfPlayers);
 
-            
             Board board = new Board(); // Create participants
 
-           
-            // Initialize game - This is supposed to be threads (will implement it later)
+            // Starts the game
+            GameInitializer(numberOfPlayers);
+
+        }
+
+        private static void GameInitializer(int numberOfPlayers)
+        {
+            List<Thread> threads = new List<Thread>();
             for (int i = 0; i < 200; i++)
             {
-                Board.PlayerAction(); 
+                Thread t = new Thread(new ThreadStart(Board.PlayerAction));
+                threads.Add(t);
             }
 
-            Console.WriteLine("\n");
+            for (int i = 0; i < 200; i++)
+            {
+                threads[i].Start();
+
+                Thread.Sleep(100);
+
+                for (int j = 0; j < numberOfPlayers; j++)
+                {
+                    if (Board.playersOnBoard[j].hasWinnerHand == true) End();
+                }
+            }
+        }
+
+        static void End()
+        {
+            Console.ReadKey(true);
         }
     }
 }

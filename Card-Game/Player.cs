@@ -9,6 +9,8 @@ namespace Card_Game
         public string[] _hand = new string[4]; 
         public string[] _handSuits = new string[4];
 
+        public bool hasWinnerHand = false; 
+
         public string Name { get; set; } 
 
         public Player(string name)
@@ -34,19 +36,21 @@ namespace Card_Game
                 _handSuits[0] == "Clubs" && _handSuits[1] == "Clubs" && _handSuits[2] == "Clubs" && _handSuits[3] == "Clubs"
                ) 
             { 
-                Console.WriteLine(Name + " is the winner");
-                ShowHand(); 
-            } 
+                Console.WriteLine("\n" + Name + " is the winner");
+                ShowHand();
+                hasWinnerHand = true;
+            }
+           
         }
 
         public void PlayerHandSuit() // Fill suit-info of each card
         {
-            int counter = 0;
             for (int i = 0; i < _hand.Length; i++)
             {
                 string[] splittedCard = _hand[i].Split(" ");
                 _handSuits[i] = splittedCard[2];
             }
         }
+        
     }
 }

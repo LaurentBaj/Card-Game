@@ -8,6 +8,8 @@ namespace Card_Game
 {
     public class Deck
     {
+        static Object _lock = new Object();  // Lock
+
         public static List<string> deck = new List<string>(); // Empty deck-slots 
         Random r = new Random(); 
 
@@ -64,9 +66,12 @@ namespace Card_Game
 
         public static string PullCardFromDeck() // Pull one card from top
         {
-            string temp = deck[0];
-            deck.Remove(deck[0]);
-            return temp;
+            lock(_lock)
+            {
+                string temp = deck[0];
+                deck.Remove(deck[0]);
+                return temp;
+            }
         }
 
     }
