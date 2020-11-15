@@ -26,14 +26,6 @@ namespace Card_Game
             }
         }
 
-        //public void ThrowHand()
-        //{
-        //    for (int i = 0; i < 4; i++) 
-        //    {
-        //        _hand = null; 
-        //    }
-        //}
-
         public void isWinnerHand() // Check if Player has a winning hand
         {
             PlayerHandSuit(); 
@@ -44,7 +36,7 @@ namespace Card_Game
                 _handSuits[0] == "Clubs" && _handSuits[1] == "Clubs" && _handSuits[2] == "Clubs" && _handSuits[3] == "Clubs"
                ) 
             { 
-                Console.WriteLine("\n" + Name + " is the winner");
+                Console.WriteLine("\n\n" + Name.ToUpper() + " IS THE WINNER!!");
                 ShowHand();
                 hasWinnerHand = true;
             }

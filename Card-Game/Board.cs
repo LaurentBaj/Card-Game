@@ -29,14 +29,21 @@ namespace Card_Game
         {
             Random a = new Random();
             Random card = new Random();
-            int cardToBeReplacedIndex = card.Next(0, 4); 
+            int cardToBeReplacedIndex = card.Next(0, 4);
+            int chosenPlayer = a.Next(0, playersOnBoard.Length);
 
             // Pick random player + swap card from hand and deck
-            Player randomPlayer = playersOnBoard[a.Next(0, playersOnBoard.Length)]; 
-            string randomCardFromPlayer = randomPlayer._hand[cardToBeReplacedIndex]; 
+            Player randomPlayer = playersOnBoard[chosenPlayer];
+            string randomCardFromPlayer = randomPlayer._hand[cardToBeReplacedIndex];
             string newCard = Deck.PullCardFromDeck();
 
+            ProcessSpecialCards(a, cardToBeReplacedIndex, randomPlayer, randomCardFromPlayer, newCard);
+        }
 
+
+        // Check for specials and process them accordingly
+        private static void ProcessSpecialCards(Random a, int cardToBeReplacedIndex, Player randomPlayer, string randomCardFromPlayer, string newCard)
+        {
             if (newCard == "2 of Clubs")
             {
                 Console.WriteLine("\n" + randomPlayer.Name + " stepped on the bomb! (2 of Clubs) Throw your hand and recieve new cards\n");
@@ -44,23 +51,31 @@ namespace Card_Game
                 {
                     randomPlayer._hand[i] = Deck.PullCardFromDeck(); // Override current hand
                 }
-                return; 
-            } 
+                return;
+            }
             else if (newCard == "10 of Diamonds")
             {
                 Console.WriteLine("\n" + randomPlayer.Name + " is under quarantine! (10 of Diamonds) Try again!\n");
-                return; 
+                return;
             }
-            else if (newCard == "King of Hearts") 
+            else if (newCard == "King of Hearts")
             {
-                Console.WriteLine("\n" + randomPlayer + " caught the vulture! Swap one card from a random player!"); 
+                Console.WriteLine("\n" + randomPlayer.Name
+                    + " caught the vulture! Swap one card from a random player!");
                 Player randomPlayer2 = playersOnBoard[a.Next(0, playersOnBoard.Length)];
-                string randomCardFromPlayer2 = randomPlayer2._hand[cardToBeReplacedIndex];
 
+                while (randomPlayer2.Name == randomPlayer.Name) // Avert card-duplication
+                {
+                    randomPlayer2 = playersOnBoard[a.Next(0, playersOnBoard.Length)];
+                }
+
+                string randomCardFromPlayer2 = randomPlayer2._hand[cardToBeReplacedIndex];
                 string tempCard = randomPlayer._hand[cardToBeReplacedIndex];
                 randomPlayer._hand[cardToBeReplacedIndex] = randomCardFromPlayer2;
                 randomPlayer2._hand[cardToBeReplacedIndex] = randomCardFromPlayer;
                 Console.WriteLine(randomPlayer.Name + " swapped [" + randomCardFromPlayer + "] - with - [" + randomCardFromPlayer2 + "] from " + randomPlayer2.Name);
+                Console.WriteLine("");
+                return;
             }
             else
             {
@@ -71,11 +86,7 @@ namespace Card_Game
                 Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]");
                 randomPlayer.isWinnerHand();  // Check if player has won 
             }
-         
         }
-
-
-       
 
 
     }

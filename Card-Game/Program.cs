@@ -26,13 +26,13 @@ namespace Card_Game
         {
 
             List<Thread> threads = new List<Thread>();
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 300; i++)
             {
                 Thread t = new Thread(new ThreadStart(Board.PlayerAction));
                 threads.Add(t);
             }
 
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 300; i++)
             {
                 threads[i].Start();
                 Thread.Sleep(250);
@@ -41,7 +41,7 @@ namespace Card_Game
                 {
                     if (Board.playersOnBoard[j].hasWinnerHand == true)
                     {
-                        GameResponses.DisplayEachHandUponGameOver(); 
+                        GameResponses.DisplayEndingMessage(); 
                         PlayerFactory.PrintEachPlayerAndHand(numberOfPlayers);
                         End();
                     }
