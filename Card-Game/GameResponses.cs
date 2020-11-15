@@ -17,14 +17,14 @@ namespace Card_Game
             Console.WriteLine("That is not a valid amount of players. Try again (2-4)\n");
         }
 
-        public static void CountCards()
+        public static void CountCards() // Mainly for testing 
         {
             Console.WriteLine("\n(Card count: " + Deck.deck.Count + ")\n"); 
         }
 
         public static void DisplayEachHandUponGameOver()
         {
-            Console.WriteLine("\n\nPLAYER HANDS: \b\b\b\b\b\b\b\b\b"); 
+            Console.WriteLine("\n\nPLAYER HANDS:"); 
         }
 
     }
