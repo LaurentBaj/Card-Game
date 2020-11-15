@@ -26,6 +26,14 @@ namespace Card_Game
             }
         }
 
+        //public void ThrowHand()
+        //{
+        //    for (int i = 0; i < 4; i++) 
+        //    {
+        //        _hand = null; 
+        //    }
+        //}
+
         public void isWinnerHand() // Check if Player has a winning hand
         {
             PlayerHandSuit(); 
@@ -45,7 +53,7 @@ namespace Card_Game
 
         public void PlayerHandSuit() // Fill suit-info of each card
         {
-            for (int i = 0; i < _hand.Length; i++)
+            for (int i = 0; i < 4; i++)
             {
                 string[] splittedCard = _hand[i].Split(" ");
                 _handSuits[i] = splittedCard[2];

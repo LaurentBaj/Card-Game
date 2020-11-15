@@ -35,22 +35,44 @@ namespace Card_Game
             Player randomPlayer = playersOnBoard[a.Next(0, playersOnBoard.Length)]; 
             string randomCardFromPlayer = randomPlayer._hand[cardToBeReplacedIndex]; 
             string newCard = Deck.PullCardFromDeck();
-            Deck.deck.Add(randomCardFromPlayer);
-            randomPlayer._hand[cardToBeReplacedIndex] = newCard;
-
-            // Display process above, check player victory + sleep 1.2s 
-            Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]");
-            randomPlayer.isWinnerHand();  // Check if player has won 
-        }
 
 
-        public void ValidateSpecialCards(string specialCard, Player randomPlayer)
-        {
-            if(specialCard == "2 of Clubs")
+            if (newCard == "2 of Clubs")
             {
-
+                Console.WriteLine("\n" + randomPlayer.Name + " stepped on the bomb! (2 of Clubs) Throw your hand and recieve new cards\n");
+                for (int i = 0; i < 4; i++)
+                {
+                    randomPlayer._hand[i] = Deck.PullCardFromDeck();
+                }
+                return; 
+            } 
+            else if (newCard == "10 of Diamonds")
+            {
+                Console.WriteLine("\n" + randomPlayer.Name + " caught the Vulture! (10 of Diamonds) Try again!\n");
+                return; 
             }
+            //else if (newCard == "King of Hearts")
+            //{
+
+            //}
+
+
+
+            else
+            {
+                Deck.deck.Add(randomCardFromPlayer);
+                randomPlayer._hand[cardToBeReplacedIndex] = newCard;
+
+                // Display process above, check player victory + sleep 1.2s 
+                Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]");
+                randomPlayer.isWinnerHand();  // Check if player has won 
+            }
+         
         }
+
+
+       
+
 
     }
 }
