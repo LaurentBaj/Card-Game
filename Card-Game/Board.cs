@@ -42,22 +42,26 @@ namespace Card_Game
                 Console.WriteLine("\n" + randomPlayer.Name + " stepped on the bomb! (2 of Clubs) Throw your hand and recieve new cards\n");
                 for (int i = 0; i < 4; i++)
                 {
-                    randomPlayer._hand[i] = Deck.PullCardFromDeck();
+                    randomPlayer._hand[i] = Deck.PullCardFromDeck(); // Override current hand
                 }
                 return; 
             } 
             else if (newCard == "10 of Diamonds")
             {
-                Console.WriteLine("\n" + randomPlayer.Name + " caught the Vulture! (10 of Diamonds) Try again!\n");
+                Console.WriteLine("\n" + randomPlayer.Name + " is under quarantine! (10 of Diamonds) Try again!\n");
                 return; 
             }
-            //else if (newCard == "King of Hearts")
-            //{
+            else if (newCard == "King of Hearts") 
+            {
+                Console.WriteLine("\n" + randomPlayer + " caught the vulture! Swap one card from a random player!"); 
+                Player randomPlayer2 = playersOnBoard[a.Next(0, playersOnBoard.Length)];
+                string randomCardFromPlayer2 = randomPlayer2._hand[cardToBeReplacedIndex];
 
-            //}
-
-
-
+                string tempCard = randomPlayer._hand[cardToBeReplacedIndex];
+                randomPlayer._hand[cardToBeReplacedIndex] = randomCardFromPlayer2;
+                randomPlayer2._hand[cardToBeReplacedIndex] = randomCardFromPlayer;
+                Console.WriteLine(randomPlayer.Name + " swapped [" + randomCardFromPlayer + "] - with - [" + randomCardFromPlayer2 + "] from " + randomPlayer2.Name);
+            }
             else
             {
                 Deck.deck.Add(randomCardFromPlayer);
