@@ -43,5 +43,14 @@ namespace Card_Game
             randomPlayer.isWinnerHand();  // Check if player has won 
         }
 
+
+        public void ValidateSpecialCards(string specialCard, Player randomPlayer)
+        {
+            if(specialCard == "2 of Clubs")
+            {
+
+            }
+        }
+
     }
 }

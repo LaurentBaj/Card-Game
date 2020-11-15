@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Card_Game
 {
-    public class Deck
+    public class Deck : IDeck
     {
         static Object _lock = new Object();  // Lock
 
@@ -73,6 +73,8 @@ namespace Card_Game
                 return temp;
             }
         }
+
+
 
     }
 }
