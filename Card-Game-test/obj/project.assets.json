@@ -4644,19 +4644,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dhb_9\\.nuget\\packages\\": {}
+    "C:\\Users\\laure\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dhb_9\\Card-Game\\Card-Game-test\\Card-Game-test.csproj",
+      "projectUniqueName": "C:\\Users\\laure\\OneDrive\\Desktop\\Card-Game\\Card-Game-test\\Card-Game-test.csproj",
       "projectName": "Card-Game-test",
-      "projectPath": "C:\\Users\\dhb_9\\Card-Game\\Card-Game-test\\Card-Game-test.csproj",
-      "packagesPath": "C:\\Users\\dhb_9\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dhb_9\\Card-Game\\Card-Game-test\\obj\\",
+      "projectPath": "C:\\Users\\laure\\OneDrive\\Desktop\\Card-Game\\Card-Game-test\\Card-Game-test.csproj",
+      "packagesPath": "C:\\Users\\laure\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\laure\\OneDrive\\Desktop\\Card-Game\\Card-Game-test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dhb_9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\laure\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4669,8 +4669,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\dhb_9\\Card-Game\\Card-Game\\Card-Game.csproj": {
-              "projectPath": "C:\\Users\\dhb_9\\Card-Game\\Card-Game\\Card-Game.csproj"
+            "C:\\Users\\laure\\OneDrive\\Desktop\\Card-Game\\Card-Game\\Card-Game.csproj": {
+              "projectPath": "C:\\Users\\laure\\OneDrive\\Desktop\\Card-Game\\Card-Game\\Card-Game.csproj"
             }
           }
         }
@@ -4712,7 +4712,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
