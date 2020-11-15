@@ -94,11 +94,11 @@ C:\Users\dhb_9\Card-Game\Card-Game-test\obj\Debug\netcoreapp3.1\Card-Game-test.c
 C:\Users\dhb_9\Card-Game\Card-Game-test\obj\Debug\netcoreapp3.1\Card-Game-test.dll
 C:\Users\dhb_9\Card-Game\Card-Game-test\obj\Debug\netcoreapp3.1\Card-Game-test.pdb
 C:\Users\dhb_9\Card-Game\Card-Game-test\obj\Debug\netcoreapp3.1\Card-Game-test.genruntimeconfig.cache
+C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\Card-Game.exe
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\nunit.engine.dll
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\nunit.engine.api.dll
-C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\Card-Game.exe
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\Card-Game-test.deps.json
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\Card-Game-test.runtimeconfig.json
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game-test\bin\Debug\netcoreapp3.1\Card-Game-test.runtimeconfig.dev.json

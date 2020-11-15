@@ -8,23 +8,25 @@ namespace Card_Game
     {
         static void Main(string[] args)
         {
+
             // Create deck + amount at game start
             Deck d1 = new Deck();
+            GameResponses.CountCards();
 
-            //Create: players (based on input) + provide player hand + print results
+            //create: players (based on input) + provide player hand + print results
             GameResponses.DisplayWelComeMessage();
-            int numberOfPlayers = PlayerFactory.DecideAmountOfPLayers();
-            PlayerFactory players = new PlayerFactory(numberOfPlayers);
+            int numberofplayers = PlayerFactory.DecideAmountOfPLayers(); 
+            PlayerFactory players = new PlayerFactory(numberofplayers);
 
-            Board board = new Board(); // Join players 
+            Board board = new Board(); // join players 
 
-            // Starts the game
-            GameInitializer(numberOfPlayers);
+            //starts the game
+            GameInitializer(numberofplayers);
+            GameResponses.CountCards();
         }
 
         private static void GameInitializer(int numberOfPlayers)
         {
-
             List<Thread> threads = new List<Thread>();
             for (int i = 0; i < 300; i++)
             {
@@ -41,14 +43,12 @@ namespace Card_Game
                 {
                     if (Board.playersOnBoard[j].hasWinnerHand == true)
                     {
-                        GameResponses.DisplayEndingMessage(); 
                         PlayerFactory.PrintEachPlayerAndHand(numberOfPlayers);
+                        GameResponses.DisplayEachHandUponGameOver();
                         End();
                     }
                 }
-
             }
-
         }
 
         static void End()
@@ -56,5 +56,6 @@ namespace Card_Game
             Console.WriteLine("\n\n..Hit the x on the right corner to quit"); 
             Console.ReadKey(true);
         }
+
     }
 }

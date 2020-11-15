@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Card_Game
 {
-    public class Deck : IDeck
+    public class Deck
     {
         static Object _lock = new Object();  // Lock
         public static string[] SpecialCard = new string[] {"2 of Clubs", "10 of Diamonds", "King of Hearts", "Ace of Spades"}; 
@@ -16,15 +16,16 @@ namespace Card_Game
 
         // Suits and Values
         private string[] suit = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
-        private string[] value = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
+        private string[] value = new string[] { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
 
-        public Deck() // Fill deck and shuffle it
+        public Deck() // Fill deck, shuffle it + Specials appear later 
         {
             ProduceDeck();
             ShuffleDeck();
+            SetSpecialsAtCorrectIndex(); 
         }
 
-        public void ProduceDeck() // Produce each card (non-shuffled)
+        private void ProduceDeck() // Produce each card (non-shuffled)
         {
             string v, s;
             for (int i = 0; i < suit.Length; i++)
@@ -39,7 +40,7 @@ namespace Card_Game
             }
         }
 
-        public void ShuffleDeck()
+        private void ShuffleDeck()
         {
             int shuffleIndex;
             string temp = "";
@@ -75,6 +76,24 @@ namespace Card_Game
             }
         }
 
+        // Make sure specials do not appear at the beginning of a game
+        private void SetSpecialsAtCorrectIndex()
+        {
+            Random r = new Random();
+            int replaceAtIndex = r.Next(17, 51);
+            for(int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < deck.Count; j++)
+                {
+                    if (deck[j].ToString() == "King of Hearts" || deck[j].ToString() == "10 of Diamonds" || deck[j].ToString() == "2 of Clubs")
+                    {
+                        string temp = deck[j];
+                        deck[j] = deck[replaceAtIndex];
+                        deck[replaceAtIndex] = temp;
+                    }
+                }
+            }   
+        }
 
 
     }
