@@ -37,7 +37,7 @@ namespace Card_Game
 
         static void End()
         {
-            Console.WriteLine("Press any button to quit the game: ");
+            Console.WriteLine("Press any button to exit the game: ");
             Console.ReadLine();
         }
 

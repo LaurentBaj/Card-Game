@@ -9,8 +9,6 @@ namespace Card_Game
     public class Deck 
     {
         static Object _lock = new Object();  // Lock
-        public static string[] SpecialCard = new string[] {"2 of Clubs", "10 of Diamonds", "King of Hearts", "Ace of Spades"}; 
-
         public static List<string> deck = new List<string>(); // Empty deck-slots 
         Random r = new Random(); 
 

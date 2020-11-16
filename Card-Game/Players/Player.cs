@@ -6,8 +6,8 @@ namespace Card_Game
 {
     public class Player
     {
-        public string[] _hand = new string[4]; 
-        public string[] _handSuits = new string[4];
+        public string[] Hand = new string[4]; 
+        private string[] _handSuits = new string[4];
 
         public bool hasWinnerHand = false; 
 
@@ -20,7 +20,7 @@ namespace Card_Game
 
         public void ShowHand()
         {
-            foreach (string p in _hand)
+            foreach (string p in Hand)
             {
                 Console.WriteLine(p); 
             }
@@ -47,7 +47,7 @@ namespace Card_Game
         {
             for (int i = 0; i < 4; i++)
             {
-                string[] splittedCard = _hand[i].Split(" ");
+                string[] splittedCard = Hand[i].Split(" ");
                 _handSuits[i] = splittedCard[2];
             }
         }

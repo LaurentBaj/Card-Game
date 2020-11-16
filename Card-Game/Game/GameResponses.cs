@@ -22,10 +22,5 @@ namespace Card_Game
             Console.WriteLine("\n(Card count: " + Deck.deck.Count + ")\n"); 
         }
 
-        public static void DisplayEachHandUponGameOver()
-        {
-            Console.WriteLine("\n\nPLAYER HANDS:"); 
-        }
-
     }
 }

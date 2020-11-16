@@ -19,9 +19,8 @@ namespace Card_Game
 
             Board board = new Board(); // Join players 
 
-            // Starts the game
+            // Start the game
             GameInit game = new GameInit(numberofplayers); 
         }
-
     }
 }

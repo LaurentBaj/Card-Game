@@ -40,7 +40,7 @@ namespace Card_Game
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    PlayerFactory.players[i]._hand[j] = Deck.PullCardFromDeck();
+                    PlayerFactory.players[i].Hand[j] = Deck.PullCardFromDeck();
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace Card_Game
                 Console.Write("[");
                 for (int j = 0; j < 4; j++)
                 {
-                    Console.Write(PlayerFactory.players[i]._hand[j] + ", ");
+                    Console.Write(PlayerFactory.players[i].Hand[j] + ", ");
                 }
                 Console.Write("\b\b]\n\n");
             }

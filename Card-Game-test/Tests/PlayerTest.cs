@@ -23,15 +23,15 @@ namespace Card_Game_test
             Player a = new Player("Anastasia");
             Player b = new Player("Benjamin");
 
-            a._hand[0] = "Ace of Spades";
-            a._hand[1] = "2 of Spades";
-            a._hand[2] = "King of Spades";
-            a._hand[3] = "7 of Spades";
+            a.Hand[0] = "Ace of Spades";
+            a.Hand[1] = "2 of Spades";
+            a.Hand[2] = "King of Spades";
+            a.Hand[3] = "7 of Spades";
 
-            b._hand[0] = "Ace of Hearts";
-            b._hand[1] = "2 of Diamonds";
-            b._hand[2] = "King of Clubs";
-            b._hand[3] = "7 of Hearts";
+            b.Hand[0] = "Ace of Hearts";
+            b.Hand[1] = "2 of Diamonds";
+            b.Hand[2] = "King of Clubs";
+            b.Hand[3] = "7 of Hearts";
 
             a.isWinnerHand();
             b.isWinnerHand();

@@ -25,7 +25,7 @@ namespace Card_Game
 
 
         // Random player switches card
-        public static void PlayerAction() // Condition at the end does not work yet 
+        public static void PlayerAction() 
         {
             Random a = new Random();
             Random card = new Random();
@@ -34,7 +34,7 @@ namespace Card_Game
 
             // Pick random player + swap card from hand and deck
             Player randomPlayer = playersOnBoard[chosenPlayer];
-            string randomCardFromPlayer = randomPlayer._hand[cardToBeReplacedIndex];
+            string randomCardFromPlayer = randomPlayer.Hand[cardToBeReplacedIndex];
             string newCard = Deck.PullCardFromDeck();
 
             ProcessSpecialCards(a, cardToBeReplacedIndex, randomPlayer, randomCardFromPlayer, newCard);
@@ -49,7 +49,7 @@ namespace Card_Game
                 Console.WriteLine("\n" + randomPlayer.Name + " stepped on the bomb! (2 of Clubs) Throw your hand and recieve new cards!\n");
                 for (int i = 0; i < 4; i++)
                 {
-                    randomPlayer._hand[i] = Deck.PullCardFromDeck(); // Override current hand
+                    randomPlayer.Hand[i] = Deck.PullCardFromDeck(); // Override current hand
                 }
                 return;
             }
@@ -68,11 +68,11 @@ namespace Card_Game
                 {
                     randomPlayer2 = playersOnBoard[a.Next(0, playersOnBoard.Length)];
                 }
-
-                string randomCardFromPlayer2 = randomPlayer2._hand[cardToBeReplacedIndex];
-                string tempCard = randomPlayer._hand[cardToBeReplacedIndex];
-                randomPlayer._hand[cardToBeReplacedIndex] = randomCardFromPlayer2;
-                randomPlayer2._hand[cardToBeReplacedIndex] = randomCardFromPlayer;
+                // Swap one card with a random player
+                string randomCardFromPlayer2 = randomPlayer2.Hand[cardToBeReplacedIndex];
+                string tempCard = randomPlayer.Hand[cardToBeReplacedIndex];
+                randomPlayer.Hand[cardToBeReplacedIndex] = randomCardFromPlayer2;
+                randomPlayer2.Hand[cardToBeReplacedIndex] = randomCardFromPlayer;
                 Console.WriteLine(randomPlayer.Name + " swapped [" + randomCardFromPlayer + "] - with - [" + randomCardFromPlayer2 + "] from " + randomPlayer2.Name);
                 Console.WriteLine("");
                 return;
@@ -80,7 +80,7 @@ namespace Card_Game
             else // If not spec-card, swap normally
             {
                 Deck.deck.Add(randomCardFromPlayer);
-                randomPlayer._hand[cardToBeReplacedIndex] = newCard;
+                randomPlayer.Hand[cardToBeReplacedIndex] = newCard;
 
                 // Display process above, check player victory + sleep 1.2s 
                 Console.WriteLine(randomPlayer.Name + " swaps [" + randomCardFromPlayer + "] - with - " + "[" + newCard + "]");
