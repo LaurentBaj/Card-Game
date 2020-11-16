@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Card_Game
 {
-    public class Deck
+    public class Deck 
     {
         static Object _lock = new Object();  // Lock
         public static string[] SpecialCard = new string[] {"2 of Clubs", "10 of Diamonds", "King of Hearts", "Ace of Spades"}; 
@@ -76,7 +76,7 @@ namespace Card_Game
             }
         }
 
-        // Make sure specials do not appear at the beginning of a game
+        // Decreacse chance of Special Cards appear at the beginning of game (17-52 index)
         private void SetSpecialsAtCorrectIndex()
         {
             Random r = new Random();

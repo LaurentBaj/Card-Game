@@ -44,24 +44,24 @@ namespace Card_Game
         // Check for specials and process them accordingly
         private static void ProcessSpecialCards(Random a, int cardToBeReplacedIndex, Player randomPlayer, string randomCardFromPlayer, string newCard)
         {
-            if (newCard == "2 of Clubs")
+            if (newCard == "2 of Clubs") // If Bomb
             {
-                Console.WriteLine("\n" + randomPlayer.Name + " stepped on the bomb! (2 of Clubs) Throw your hand and recieve new cards\n");
+                Console.WriteLine("\n" + randomPlayer.Name + " stepped on the bomb! (2 of Clubs) Throw your hand and recieve new cards!\n");
                 for (int i = 0; i < 4; i++)
                 {
                     randomPlayer._hand[i] = Deck.PullCardFromDeck(); // Override current hand
                 }
                 return;
             }
-            else if (newCard == "10 of Diamonds")
+            else if (newCard == "10 of Diamonds") // If Quarantine 
             {
                 Console.WriteLine("\n" + randomPlayer.Name + " is under quarantine! (10 of Diamonds) Try again!\n");
                 return;
             }
-            else if (newCard == "King of Hearts")
+            else if (newCard == "King of Hearts") // SwapperMadness
             {
                 Console.WriteLine("\n" + randomPlayer.Name
-                    + " caught the vulture! Swap one card from a random player!");
+                    + " caught SwapperMadness! Swap one card from a random player!");
                 Player randomPlayer2 = playersOnBoard[a.Next(0, playersOnBoard.Length)];
 
                 while (randomPlayer2.Name == randomPlayer.Name) // Avert card-duplication
@@ -77,7 +77,7 @@ namespace Card_Game
                 Console.WriteLine("");
                 return;
             }
-            else
+            else // If not spec-card, swap normally
             {
                 Deck.deck.Add(randomCardFromPlayer);
                 randomPlayer._hand[cardToBeReplacedIndex] = newCard;
