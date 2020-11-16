@@ -13,8 +13,8 @@ namespace Card_Game
         Random r = new Random(); 
 
         // Suits and Values
-        private string[] suit = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
-        private string[] value = new string[] { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
+        private string[] _suit = new string[] { "Spades", "Hearts", "Diamonds", "Clubs" };
+        private string[] _value = new string[] { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
 
         public Deck() // Fill deck, shuffle it + Specials appear later 
         {
@@ -26,13 +26,13 @@ namespace Card_Game
         private void ProduceDeck() // Produce each card (non-shuffled)
         {
             string v, s;
-            for (int i = 0; i < suit.Length; i++)
+            for (int i = 0; i < _suit.Length; i++)
             {
-                s = suit[i];
+                s = _suit[i];
 
-                for (int j = 0; j < value.Length; j++)
+                for (int j = 0; j < _value.Length; j++)
                 {
-                    v = value[j];
+                    v = _value[j];
                     deck.Add(v + " of " + s);
                 }
             }

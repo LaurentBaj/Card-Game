@@ -43,7 +43,7 @@ namespace Card_Game
            
         }
 
-        public void PlayerHandSuit() // Fill suit-info of each card
+        private void PlayerHandSuit() // Fill suit-info of each card
         {
             for (int i = 0; i < 4; i++)
             {

@@ -10,20 +10,4 @@ C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.dll
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.pdb
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.genruntimeconfig.cache
-<<<<<<< HEAD
-=======
 C:\Users\laure\OneDrive\Desktop\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.csprojAssemblyReference.cache
-C:\Users\dhb_9\Card-Game\Card-Game\bin\Debug\netcoreapp3.1\Card-Game.exe
-C:\Users\dhb_9\Card-Game\Card-Game\bin\Debug\netcoreapp3.1\Card-Game.deps.json
-C:\Users\dhb_9\Card-Game\Card-Game\bin\Debug\netcoreapp3.1\Card-Game.runtimeconfig.json
-C:\Users\dhb_9\Card-Game\Card-Game\bin\Debug\netcoreapp3.1\Card-Game.runtimeconfig.dev.json
-C:\Users\dhb_9\Card-Game\Card-Game\bin\Debug\netcoreapp3.1\Card-Game.dll
-C:\Users\dhb_9\Card-Game\Card-Game\bin\Debug\netcoreapp3.1\Card-Game.pdb
-C:\Users\dhb_9\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.csprojAssemblyReference.cache
-C:\Users\dhb_9\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.csproj.CoreCompileInputs.cache
-C:\Users\dhb_9\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.AssemblyInfoInputs.cache
-C:\Users\dhb_9\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.AssemblyInfo.cs
-C:\Users\dhb_9\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.dll
-C:\Users\dhb_9\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.pdb
-C:\Users\dhb_9\Card-Game\Card-Game\obj\Debug\netcoreapp3.1\Card-Game.genruntimeconfig.cache
->>>>>>> 52f42d6d421ce58cbe416c0cd9a7b73e05e4438d

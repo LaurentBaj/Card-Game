@@ -5,10 +5,10 @@ using System.Threading;
 
 namespace Card_Game
 {
-    public class GameInit
+    public class GameInit 
     {
         private bool isFinished; 
-        public GameInit(int numberOfPlayers)
+        public GameInit(int numberOfPlayers) // Produce each playeraction thread + start them
         {
             List<Thread> threads = new List<Thread>();
             for (int i = 0; i < 300; i++)
@@ -35,9 +35,9 @@ namespace Card_Game
             }
         }
 
-        static void End()
+        static void End() // Display ending message + instructions
         {
-            Console.WriteLine("Press any button to exit the game: ");
+            GameResponses.DisplayEndingMessage(); 
             Console.ReadLine();
         }
 

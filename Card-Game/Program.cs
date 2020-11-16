@@ -8,7 +8,6 @@ namespace Card_Game
     {
         static void Main(string[] args)
         {
-
             // Create deck + amount at game start
             Deck d1 = new Deck();
 
@@ -17,7 +16,8 @@ namespace Card_Game
             int numberofplayers = PlayerFactory.DecideAmountOfPLayers();
             PlayerFactory players = new PlayerFactory(numberofplayers);
 
-            Board board = new Board(); // Join players 
+            // Join players 
+            Board board = new Board(); 
 
             // Start the game
             GameInit game = new GameInit(numberofplayers); 

@@ -22,5 +22,9 @@ namespace Card_Game
             Console.WriteLine("\n(Card count: " + Deck.deck.Count + ")\n"); 
         }
 
+        public static void DisplayEndingMessage()  
+        {
+            Console.WriteLine("Press any button to exit the game: ");
+        }
     }
 }
